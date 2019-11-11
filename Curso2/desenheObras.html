@@ -33,11 +33,20 @@
          x = evento.pageX - tela.offsetLeft;
          y = evento.pageY - tela.offsetTop;
 
-        if(desenha) {
+        if(desenha && podeDesenhar(x,y)) {
 
             desenhaCirculo(x, y, 5, corAtual);
         }
+    }function podeDesenhar(x, y) {
+
+        if (x >= 0 && x < 152 && y >= 0 && y <= 52) {
+            return false;
+        } else {
+            return true;
+        }
     }
+
+
 
     function habilitaDesenhar() {
 
@@ -48,6 +57,23 @@
 
         desenha = false;
     }
+
+    function trocaCor(evento) {
+
+        x = evento.pageX - tela.offsetLeft;
+        y = evento.pageY - tela.offsetTop;
+
+        if(x <= 100 && x > 50 && y <= 50) {
+            corAtual = 'green';
+        }
+        if (x <= 50 && x >= 0 && y <= 50) {
+            corAtual = 'red';
+        }
+        if (x <= 150 && x > 100 && y <= 50) {
+            corAtual = 'blue';
+        }
+    }
+
 
     var tela = document.querySelector('canvas');
     var pincel = tela.getContext('2d');
@@ -72,9 +98,7 @@
 
     tela.onmousemove = lidaComMovimentoDoMouse;
 
-    if (x <= 150 && y <= 50 ) {
-        pincel.fillStyle = 'green';
-    }
+    tela.onclick = trocaCor;
 
 
 </script>
