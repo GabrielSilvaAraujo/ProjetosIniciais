@@ -1,7 +1,7 @@
 function calculaImc (nomePaciente) {
 
     var tdPaciente = document.querySelector(nomePaciente);
-    var tdNome = document.querySelector(".info-nome");
+    var tdNome = tdPaciente.querySelector(".info-nome");
     var tdImc = tdPaciente.querySelector(".info-imc");
     var tdPeso = tdPaciente.querySelector(".info-peso");
     var tdAltura = tdPaciente.querySelector(".info-altura");
@@ -30,11 +30,11 @@ function calculaImc (nomePaciente) {
 
 
 var titulo = document.querySelector(".titulo");
+var lista = ["#primeiro-paciente", "#segundo-paciente", "#terceiro-paciente", "#quarto-paciente", "#quinto-paciente"];
 
 titulo.textContent = "banana";
 
-calculaImc("#primeiro-paciente");
-calculaImc("#segundo-paciente");
-calculaImc("#terceiro-paciente");
-calculaImc("#quarto-paciente");
-calculaImc("#quinto-paciente");
+    for (var i = 0; i < lista.length; i++) {
+
+        calculaImc(lista[i]);
+    }
