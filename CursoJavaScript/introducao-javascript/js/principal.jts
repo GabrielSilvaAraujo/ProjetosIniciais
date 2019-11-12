@@ -1,0 +1,40 @@
+function calculaImc (nomePaciente) {
+
+    var tdPaciente = document.querySelector(nomePaciente);
+    var tdNome = document.querySelector(".info-nome");
+    var tdImc = tdPaciente.querySelector(".info-imc");
+    var tdPeso = tdPaciente.querySelector(".info-peso");
+    var tdAltura = tdPaciente.querySelector(".info-altura");
+
+    var nome = tdNome.textContent;
+    var peso = tdPeso.textContent;
+    var altura = tdAltura.textContent;
+    var imc = Math.round(peso / (altura*altura));
+
+    if (peso <= 300 && peso >= 0 && altura <= 3 && altura >= 0) {
+        tdImc.textContent = imc;
+    } else {
+        tdImc.textContent = "inválido";
+    }
+
+    if (imc < 18) {
+
+        alert("Atenção, " + nome + " está abaixo do índice esperado");
+    }
+
+    if (imc >= 26) {
+
+        alert ("Atenção, " + nome + " está acima do índice esperado");
+    }
+}
+
+
+var titulo = document.querySelector(".titulo");
+
+titulo.textContent = "banana";
+
+calculaImc("#primeiro-paciente");
+calculaImc("#segundo-paciente");
+calculaImc("#terceiro-paciente");
+calculaImc("#quarto-paciente");
+calculaImc("#quinto-paciente");
