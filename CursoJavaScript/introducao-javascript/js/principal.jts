@@ -15,18 +15,23 @@ function calculaImc (nomePaciente) {
         tdImc.textContent = imc.toFixed(2);
     } else {
         tdImc.textContent = "inválido";
+        trPaciente.style.backgroundColor = "lightcoral";
     }
 
     if (imc < 18) {
 
+        tdImc.style.color = "red";
         alert("Atenção, " + nome + " está abaixo do índice esperado");
     }
 
     if (imc >= 26) {
 
+        tdImc.style.color = "red";
         alert ("Atenção, " + nome + " está acima do índice esperado");
     }
 }
+
+
 
 
 var titulo = document.querySelector(".titulo");
@@ -34,8 +39,9 @@ var lista = document.querySelectorAll(".paciente");
 
 titulo.textContent = "banana";
 
-
     for (var i = 0; i < lista.length; i++) {
 
         calculaImc(lista[i]);
+
     }
+
