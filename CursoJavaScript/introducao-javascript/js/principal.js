@@ -7,7 +7,7 @@ function validaPeso(peso) {
 
     return peso >= 0 && peso <= 400;
 }
-function calculaImc (nomePaciente) {
+function calculaImcTabelaInicial (nomePaciente) {
 
     var trPaciente = nomePaciente;
     var tdNome = trPaciente.querySelector(".info-nome");
@@ -46,12 +46,11 @@ function calcular(peso, altura) {
     imc = peso / (altura*altura);
     return imc.toFixed(2);
 }
+
 var lista = document.querySelectorAll(".paciente");
 
 var botao = document.querySelector("#adicionar-paciente");
 
-
-    for (var i = 0; i < lista.length; i++) {
-
-        calculaImc(lista[i]);
-    }
+for (var i = 0; i < lista.length; i++) {
+    calculaImcTabelaInicial(lista[i]);
+}
