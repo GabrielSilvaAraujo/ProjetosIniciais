@@ -19,6 +19,8 @@
 		<main>
 			<section class="container">
 				<h2 class="titulo">Meus pacientes</h2>
+				<label>Filtro:</label>
+				<input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite o nome">
 				<table>
 					<thead>
 						<tr>
@@ -70,11 +72,41 @@
 						</tr>
 					</tbody>
 				</table>
-
+				<button id="buscar-paciente" class="botao bto-principal">Buscar pacientes</button>
 			</section>
 		</main>
 
+		<section class="container">
+			<h2 id="titulo-form">Adicionar novo paciente</h2>
+			<ul id="mensagem-erro">
+
+			</ul>
+			<form id="adiciona">
+				<div class="grupo">
+					<label for="nome">Nome:</label>
+					<input id="nome" name="nome" type="text" placeholder="nome" class="campo">
+				</div>
+				<div class="grupo">
+					<label for="peso">Peso:</label>
+					<input id="peso" name="peso" type="text" placeholder="peso" class="campo campo-medio">
+				</div>
+				<div class="grupo">
+					<label for="altura">Altura:</label>
+					<input id="altura" name="altura" type="text" placeholder="altura" class="campo campo-medio">
+				</div>
+				<div class="grupo">
+					<label for="gordura">% de Gordura:</label>
+					<input id="gordura" name="gordura" type="text" placeholder="porcentagem de gordura" class="campo campo-medio">
+				</div>
+
+				<button id="adicionar-paciente" class="botao bto-principal">Adicionar</button>
+			</form>
+		</section>
 		<script src="js/principal.jts"></script>
+		<script src="js/form.js"></script>
+		<script src="js/removerPacientes.js"></script>
+		<script src="js/filtra.js"></script>
+		<script src="js/Buscar.js"></script>
 
 	</body>
 </html>

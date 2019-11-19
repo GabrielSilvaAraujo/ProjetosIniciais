@@ -1,3 +1,12 @@
+function validaAltura(altura) {
+
+    return altura < 3.0 && altura >= 0;
+}
+
+function validaPeso(peso) {
+
+    return peso >= 0 && peso <= 400;
+}
 function calculaImc (nomePaciente) {
 
     var trPaciente = nomePaciente;
@@ -9,39 +18,40 @@ function calculaImc (nomePaciente) {
     var nome = tdNome.textContent;
     var peso = tdPeso.textContent;
     var altura = tdAltura.textContent;
-    var imc = peso / (altura*altura);
 
-    if (peso <= 300 && peso >= 0 && altura <= 3 && altura >= 0) {
-        tdImc.textContent = imc.toFixed(2);
-    } else {
-        tdImc.textContent = "inválido";
-        trPaciente.style.backgroundColor = "lightcoral";
+    let alturaEhValida = validaAltura(altura);
+    let pesoEhValido = validaPeso(peso);
+
+    if (!pesoEhValido) {
+        tdImc.textContent = "Peso inválido!";
+        trPaciente.classList.add("paciente-invalido");
+        pesoEhValido = false;
     }
 
-    if (imc < 18) {
-
-        tdImc.style.color = "red";
-        alert("Atenção, " + nome + " está abaixo do índice esperado");
+    if(!alturaEhValida) {
+        tdImc.textContent = "altura inválida";
+        trPaciente.classList.add("paciente-invalido");
+        pesoEhValido = false;
     }
 
-    if (imc >= 26) {
-
-        tdImc.style.color = "red";
-        alert ("Atenção, " + nome + " está acima do índice esperado");
+    if(alturaEhValida && pesoEhValido) {
+        imc = calcular(peso, altura);
+        tdImc.textContent = imc;
     }
+
 }
 
+function calcular(peso, altura) {
 
-
-
-var titulo = document.querySelector(".titulo");
+    imc = peso / (altura*altura);
+    return imc.toFixed(2);
+}
 var lista = document.querySelectorAll(".paciente");
 
-titulo.textContent = "banana";
+var botao = document.querySelector("#adicionar-paciente");
+
 
     for (var i = 0; i < lista.length; i++) {
 
         calculaImc(lista[i]);
-
     }
-
