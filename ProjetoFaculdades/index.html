@@ -1,0 +1,58 @@
+<html lang="pt-br">
+    <head>
+        <title>Lista de Faculdades</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../alura-typer/public/css/libs/google-fonts.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="../alura-typer/public/js/jquery.js"></script>
+        <script src="main.js"></script>
+
+    </head>
+
+    <body>
+        <h1 class="center">Tabela de faculades particulares em Uberlândia</h1>
+
+        <section class="tabela-informacoes">
+            <table class="centered, bordered">
+                <thead>
+                    <tr>
+                        <th>Faculdade</th>
+                        <th>Curso</th>
+                        <th>Tipo</th>
+                        <th>Período</th>
+                        <th>Preço</th>
+                        <th colspan="4" rowspan="4">Anotações</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </section>
+
+        <section class="formulario-informacoes">
+            <form>
+                <p><label>Faculdade:    <input type="text" required></label></p>
+                <p><label>Curso:    <input type="text" required></label></p>
+                <p><label>Preço:    <input type="text" required></label></p>
+                <p><label>Anotações:  <input type="te"></label></p>
+                <fieldset>
+                    <legend>Presencial ou à distância?</legend>
+
+                    <label><input type="radio" value="presencial" name="tipo" checked>Presencial</label>
+
+                    <label><input type="radio" value="distancia" name="tipo">À Distância</label>
+
+                </fieldset>
+
+                <fieldset class="periodo">
+                    <legend>Período</legend>
+
+                    <label><input type="radio" value="Integral" checked>Integral</label>
+                    <label><input type="radio" value="Matutino">Matutino</label>
+                    <label><input type="radio" value="Noturno">Noturno</label>
+                </fieldset>
+            </form>
+        </section>
+    </body>
+</html>

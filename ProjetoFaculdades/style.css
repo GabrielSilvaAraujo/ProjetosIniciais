@@ -1,0 +1,25 @@
+.formulario-informacoes {
+    margin-top: 50px;
+    width: 60%;
+
+}
+
+.tabela-informacoes {
+    position: relative;
+    margin-bottom: 80px;
+}
+
+th {
+    padding: 15px;
+    border-bottom: 2px solid grey;
+    border-left: 2px solid grey;
+}
+
+fieldset {
+    margin-top: 20px;
+    width: 200px;
+}
+
+.periodo {
+    width: 239px;
+}
