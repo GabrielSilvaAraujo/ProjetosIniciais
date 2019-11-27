@@ -1,3 +1,5 @@
+$("#botao-placar").click(mostraPlacar);
+
 function inserePlacar() {
     let corpoTabela = $(".placar").find("tbody");
     let usuario = "Gabriel";
@@ -6,9 +8,22 @@ function inserePlacar() {
 
     linha.find(".botao-remover").click(function (event) {
         event.preventDefault();
-        $(this).parent().parent().remove();
+        var linha = $(this).parent().parent();
+        linha.fadeOut();
+        setTimeout(function() {
+            linha.remove()
+        },1000)
     });
     corpoTabela.append(linha);
+    $(".placar").slideDown(500);
+    scrollPlacar();
+}
+
+function scrollPlacar() {
+    let posicaoPlacar = $(".placar").offsetTop;
+    $("body").animate({
+        scrollTop: posicaoPlacar +"px"
+    },1000);
 }
 
 function criaLinha(usuario, numPalavras) {
@@ -25,11 +40,10 @@ function criaLinha(usuario, numPalavras) {
     linha.append(colunaPalavras);
     linha.append(colunaRemover);
 
-    console.log(linha);
     return linha;
 }
 
-$(".botao-remover").click(function(event) {
-    event.preventDefault();
-    $(this).parent().parent().remove();
-});
+function mostraPlacar() {
+
+    $(".placar").stop().slideToggle(600);
+}

@@ -5,7 +5,9 @@ $("button").click(function (event) {
     event.preventDefault();
     inserePlacar();
     $(".formulario").trigger("reset");
-
+    $("body").animate({
+        scrollTop: "100%"
+    },1000);
 });
 
 function criaLinha(faculdade, curso, tipo, periodo, preco, anotacoes) {
