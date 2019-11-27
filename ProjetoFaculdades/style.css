@@ -1,25 +1,84 @@
-.formulario-informacoes {
-    margin-top: 50px;
-    width: 60%;
-
-}
-
-.tabela-informacoes {
-    position: relative;
-    margin-bottom: 80px;
+body{
+background: linear-gradient(#3399FF, #00FFFF);
 }
 
 th {
-    padding: 15px;
-    border-bottom: 2px solid grey;
-    border-left: 2px solid grey;
+padding: 15px;
+border-bottom: 2px solid grey;
+border-left: 2px solid grey;
 }
 
 fieldset {
-    margin-top: 20px;
-    width: 200px;
+display: inline-block;
+text-align: center;
+width: 30%;
+vertical-align: top;
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+img {
+float: right;
+margin: 100px;
+margin-top: 20px;
+height: 600px;
+width: auto;
+}
+
+label {
+    color: black !important;
+}
+
+form p {
+    width: 40%;
+    margin-left: 20px;
+    display: block;
+}
+
+.formulario-informacoes {
+margin-top: 50px;
+width: 100%;
+}
+
+.falloutBoy{
+    width: 30%;
+    height: auto;
+    margin-right: 50px;
+}
+
+.tabela-informacoes {
+position: relative;
+margin-bottom: 80px;
+}
+
+.modalidade {
+width: 940px;
+margin: 0 18px 0;
+padding: 30px 0;
 }
 
 .periodo {
-    width: 239px;
+margin: 0 18px 0;
+}
+
+#anotacoes {
+height: 100px;
+}
+
+
+#enviar {
+margin-left: 35%;
+
+}
+
+.center {
+    margin: 20px auto;
+}
+
+.mapa-conteudo {
+    padding-left: 26%;
+}
+
+#enviar:hover {
+    color: #4a148c;
 }

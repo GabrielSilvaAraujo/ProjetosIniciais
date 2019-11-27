@@ -4,55 +4,78 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../alura-typer/public/css/libs/google-fonts.css">
         <link rel="stylesheet" href="style.css">
-        <script src="../alura-typer/public/js/jquery.js"></script>
-        <script src="main.js"></script>
+        <link rel="stylesheet" href="../alura-typer/public/css/libs/materialize.min.css">
 
     </head>
 
     <body>
-        <h1 class="center">Tabela de faculades particulares em Uberlândia</h1>
+    <h1 class="center">Tabela de faculades particulares em Uberlândia</h1>
+    <section class="tabela-informacoes">
+        <table class="centered, bordered">
+            <thead>
+            <tr>
+                <th>Faculdade</th>
+                <th>Curso</th>
+                <th>Tipo</th>
+                <th>Período</th>
+                <th>Preço</th>
+                <th>Anotações</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </section>
 
-        <section class="tabela-informacoes">
-            <table class="centered, bordered">
-                <thead>
-                    <tr>
-                        <th>Faculdade</th>
-                        <th>Curso</th>
-                        <th>Tipo</th>
-                        <th>Período</th>
-                        <th>Preço</th>
-                        <th colspan="4" rowspan="4">Anotações</th>
-                    </tr>
-                </thead>
-                <tbody>
+    <div class="mapa-conteudo">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.652374065903!2d-48.28292428515072!3d-18.946775087162155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a444d9acd4be29%3A0x5117410c69d9dc86!2sPit%C3%A1goras!5e0!3m2!1spt-BR!2sbr!4v1574871439866!5m2!1spt-BR!2sbr" width="700" height="450" frameborder="0" style="border:0;" allowfullscreen="" class="center"></iframe>
+    </div>
 
-                </tbody>
-            </table>
-        </section>
+    <h3>Adicionar na Tabela</h3><br>
+    <section class="formulario-informacoes">
+        <img src="falloutBoy.png" alt="Fallout boy thumbs up" class="falloutBoy">
+        <form class="formulario">
+            <p><label for="faculdade">Faculdade:    </label>
+                <input type="text" id="faculdade" required></p>
+            <p><label for="curso">Curso:    </label>
+                <input id="curso" type="text" required></p>
+            <p><label for="preco">Preço</label>
+                <input type="number" id="preco" required></p>
+            <p><label for="anotacoes">Anotações:</label>
+                <textarea id="anotacoes"></textarea></p>
 
-        <section class="formulario-informacoes">
-            <form>
-                <p><label>Faculdade:    <input type="text" required></label></p>
-                <p><label>Curso:    <input type="text" required></label></p>
-                <p><label>Preço:    <input type="text" required></label></p>
-                <p><label>Anotações:  <input type="te"></label></p>
-                <fieldset>
+            <div class="modalidade">
+                <fieldset class="presencial">
                     <legend>Presencial ou à distância?</legend>
 
-                    <label><input type="radio" value="presencial" name="tipo" checked>Presencial</label>
+                    <input type="radio" value="Presencial" name="tipo" id="presencial" class="with-gap" checked>
+                    <label for="presencial">Presencial</label>
 
-                    <label><input type="radio" value="distancia" name="tipo">À Distância</label>
+                    <input type="radio" value="À Distancia" name="tipo" id="distancia" class="with-gap">
+                    <label for="distancia">À Distância</label>
 
                 </fieldset>
+            </div>
 
+            <div class="container, col s1">
                 <fieldset class="periodo">
                     <legend>Período</legend>
 
-                    <label><input type="radio" value="Integral" checked>Integral</label>
-                    <label><input type="radio" value="Matutino">Matutino</label>
-                    <label><input type="radio" value="Noturno">Noturno</label>
+                    <input type="radio" value="Integral" id="integral" name="periodo" class="with-gap" checked>
+                    <label for="integral">Integral</label>
+                    <input type="radio" class="with-gap" value="Matutino" id="matutino" name="periodo">
+                    <label for="matutino">Matutino</label>
+                    <input type="radio" value="Noturno" id="noturno" name="periodo" class="with-gap">
+                    <label for="noturno">Noturno</label>
                 </fieldset>
-            </form>
-        </section>
+            </div>
+
+            <button class="btn waves-effect waves-light" type="submit" id="enviar">Enviar
+                <i class="material-icons right">send</i>
+            </button>
+        </form>
+    </section>
+    <script src="../alura-typer/public/js/jquery.js"></script>
+    <script src="main.js"></script>
     </body>
 </html>
